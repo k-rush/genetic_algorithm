@@ -1,4 +1,7 @@
 import java.util.*;
+
+
+
 public abstract class Genome<T>
 {
 	public ArrayList<T> geneSequence;

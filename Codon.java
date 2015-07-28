@@ -1,5 +1,12 @@
 import java.util.Random;
-public class Codon 
+
+/**
+ * Codon
+ * Individual segments of the DNA strands.  Codons consist of three bases, which represent nucleobases in biology.  
+ * These bases are coded by a character - A, G, C or U (Adenosine, Guanosine, Cytidine, Uridine).  
+ * A Codon, a set of 3 bases, will code for a specific amino acid during protein synthesis.
+ */
+public class Codon
 {
 	public enum BASE {A, C, U, G}
 	public BASE [] bases;
@@ -59,6 +66,8 @@ public class Codon
 		return s;
 	}
 
+	/** Returns a 1 character string of the amino acid a Codon will code for.
+	 */
 	public String getAminoAcid()
 	{
 		String Amino = "";

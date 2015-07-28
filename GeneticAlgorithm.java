@@ -1,10 +1,21 @@
 import java.util.*;
 
+
+/**
+ * Genetic algorithm - 
+ * Random population of DNA is created, scores assessed, reproduction occurs,
+ * and the process continues until a match is found.
+ **/
 public class GeneticAlgorithm
 {
 	
 	public static final boolean verbose = true;
 	public static final int MAX_ITER = 400;
+
+	/** 
+	 * User is asked to enter a population size, crossover rate, mutation rate,
+	 * algorithm is executed.
+	 **/
 	public static void main(String args[])
 	{
 		int populationSize, genomeSize = 60;
@@ -168,6 +179,12 @@ public class GeneticAlgorithm
 
 	}
 
+	/**
+	 * Method will return a score based on the fitness of a DNA sequence.  We want
+	 * DNA that codes for a protein sequence more similar to our goal to have a higher score.
+	 * We're using the inverse of the edit distance to do that - although that doesn't seem to
+	 * be working very well.
+	 **/
 	public static double score(DNA goal, DNA individual)
 	{
 		String goalProtein = goal.getProteinSequence();
@@ -181,6 +198,9 @@ public class GeneticAlgorithm
 		return score;
 	}
 
+	/**
+	 * Calculate the minimum edit distance between two strings.
+	 **/
 	public static int minDistance(String word1, String word2) {
 	int len1 = word1.length();
 	int len2 = word2.length();
@@ -221,7 +241,10 @@ public class GeneticAlgorithm
 	return dp[len1][len2];
 }
 
-	//Calculate distance between two strings.
+/*
+	
+	 * Calculate the edit distance between two strings.
+	 
 	public static int distance(String a, String b) {
         a = a.toLowerCase();
         b = b.toLowerCase();
@@ -240,5 +263,5 @@ public class GeneticAlgorithm
             }
         }
         return costs[b.length()];
-    }
+    }*/
 }
