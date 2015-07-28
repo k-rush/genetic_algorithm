@@ -7,11 +7,15 @@ Genetic Algorithm program written in Java.  Uses DNA and protein synthesis as th
 Classes
 
 Codon 
+
   Description:
+  
     Individual segments of the DNA strands.  Codons consist of three bases, which represent nucleobases in biology.  These bases
     are coded by a character - A, G, C or U (Adenosine, Guanosine, Cytidine, Uridine).  A Codon, a set of 3 bases, will code for
     a specific amino acid during protein synthesis.
+    
   Methods:
+  
     Codon(), Codon(Codon copy)
       Constructor, copy constructor.
     void mutate()
@@ -22,17 +26,25 @@ Codon
       Returns the amino acid (as a 1 character string) the codon will code for.
       
 
+
 abstract Genome<T>
+
   Description:
+  
     Very simple abstract class, the only attribute being the collection (sequence) of genes.
 
+
 DNA extends Genome<Codon>
+
   Description:
+  
     A list of a number of Codons.  An instance of DNA will code for a sequence of amino acids, representing a biological gene.
     DNA instances can be crossed over, where segments of the strand are switched with another DNA instance, during reproduction.
     Individual codons within the DNA can be mutated.  DNA will be scored based on how close it is to the goal protein in the  
     genetic algorithm.
+    
   Methods:
+  
     DNA(int size), DNA(ArrayList<Codon> geneSequence, int size)
       Constructors.
     void mutate()
